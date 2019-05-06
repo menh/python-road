@@ -9,7 +9,7 @@ class DownloadHanlder(Thread):
         self.url = url
 
     def run(self):
-        filename = self.url[self.url.rfind('/') + 1]
+        filename = self.url[self.url.rfind('/') + 1:]
         resp = requests.get(self.url)
         with open('/Users/Hao/' + filename, 'wb) as f:
             f.write(resp.content)
